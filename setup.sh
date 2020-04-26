@@ -35,4 +35,24 @@ defaults write -globalDomain com.apple.trackpad.forceClick -int 0
 defaults write com.apple.AppleMultitouchTrackpad ActuateDetents -int 0
 defaults write com.apple.AppleMultitouchTrackpad ForceSuppressed -int 1
 
+dockutil --remove Launchpad
+dockutil --remove Safari
+dockutil --remove Mail
+dockutil --remove FaceTime
+dockutil --remove Messages
+dockutil --remove Maps
+dockutil --remove Photos
+dockutil --remove Contacts
+dockutil --remove Calendar
+dockutil --remove Reminders
+dockutil --remove Notes
+dockutil --remove Music
+dockutil --remove Podcasts
+dockutil --remove TV
+dockutil --remove News
+dockutil --remove Numbers
+dockutil --remove Keynote
+dockutil --remove Pages
+dockutil --remove "App Store"
+
 osascript -e 'tell app "System Events" to restart'
