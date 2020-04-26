@@ -1,4 +1,6 @@
 
+tmutil localsnapshot
+
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew install mas git go ffmpeg rust jq wget youtube-dl make python
 brew cask install google-chrome
