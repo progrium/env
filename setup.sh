@@ -2,7 +2,7 @@
 tmutil localsnapshot
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-brew install mas git go
+brew install mas git go dockutil
 #brew install ffmpeg rust jq wget youtube-dl make python
 brew cask install google-chrome
 brew cask install visual-studio-code
