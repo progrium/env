@@ -21,3 +21,12 @@ cp ~/Environ/.gitconfig ~/.gitconfig
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 compaudit | xargs chmod g-w,o-w
+
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+defaults write com.apple.LaunchServices LSQuarantine -bool false
+defaults write com.apple.Terminal "Default Window Settings" -string "Pro"
+defaults write com.apple.Terminal "Startup Window Settings" -string "Pro"
+defaults write -globalDomain com.apple.trackpad.scaling -int 1
+defaults write -globalDomain com.apple.trackpad.forceClick -int 0
+defaults write com.apple.AppleMultitouchTrackpad ActuateDetents -int 0
+defaults write com.apple.AppleMultitouchTrackpad ForceSuppressed -int 1
