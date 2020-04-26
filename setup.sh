@@ -15,6 +15,6 @@ brew cask install shiftit
 brew cask install adobe-creative-cloud
 
 cd ~
-git clone git@github.com:progrium/env.git Environ
+git clone https://github.com/progrium/env.git Environ
 cp ~/Environ/.zshrc ~/.zshrc
 cp ~/Environ/.gitconfig ~/.gitconfig
