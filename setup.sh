@@ -34,6 +34,7 @@ defaults write -globalDomain com.apple.trackpad.scaling -int 1
 defaults write -globalDomain com.apple.trackpad.forceClick -int 0
 defaults write com.apple.AppleMultitouchTrackpad ActuateDetents -int 0
 defaults write com.apple.AppleMultitouchTrackpad ForceSuppressed -int 1
+defaults write com.apple.TextInputMenu visible -bool false
 
 dockutil --remove Launchpad
 dockutil --remove Safari
