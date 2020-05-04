@@ -29,6 +29,7 @@ git clone https://github.com/progrium/env.git Environ
 cp ~/Environ/.zshrc ~/.zshrc
 cp ~/Environ/.gitconfig ~/.gitconfig
 
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -int 1
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 defaults write com.apple.Terminal "Default Window Settings" -string "Pro"
