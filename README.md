@@ -1,7 +1,7 @@
 # env
 
 ```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/progrium/env/master/setup.sh)"
+curl -L http://tiny.cc/progrium-bootstrap | sh
 ```
 sudo nvram "recovery-boot-mode=unused"
 sudo reboot
