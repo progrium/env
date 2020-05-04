@@ -63,6 +63,6 @@ source $ZSH/oh-my-zsh.sh
 
 erase-install() {
   /Applications/Install\ macOS*.app/Contents/Resources/startosinstall \
-    --eraseinstall --agreetolicense --nointeraction
+    --eraseinstall --agreetolicense --nointeraction --forcequitapps
 }
 
