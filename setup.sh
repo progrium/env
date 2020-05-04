@@ -1,8 +1,8 @@
 
 tmutil localsnapshot
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 sudo softwareupdate --fetch-full-installer
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew install mas git go dockutil ruby brew-gem
 #brew install ffmpeg rust jq wget youtube-dl make python
 brew cask install google-chrome
@@ -54,9 +54,9 @@ dockutil --remove Music
 dockutil --remove Podcasts
 dockutil --remove TV
 dockutil --remove News
-dockutil --remove Numbers
-dockutil --remove Keynote
-dockutil --remove Pages
+#dockutil --remove Numbers
+#dockutil --remove Keynote
+#dockutil --remove Pages
 dockutil --remove "App Store"
 
 osascript -e 'tell app "System Events" to restart'
