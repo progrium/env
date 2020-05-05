@@ -26,6 +26,10 @@ alias ls="ls -lah"
 alias gcm="gc -m"
 alias gpu="gp origin"
 
+ssh-origin() {
+  git remote set-url origin "$(git remote get-url origin | sed 's/https:\/\//git@/' | sed 's/\//:/')"
+}
+
 autoload -U add-zsh-hook
 load-devrc() {
   if [[ -f .devrc && -r .devrc ]]; then
