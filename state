@@ -31,6 +31,9 @@ state-dock() {
     dockutil --remove "App Store"
 }
 
+[[ -d ~/Go ]] || \
+    mkdir ~/Go
+
 [[ -d ~/Source ]] || \
     mkdir ~/Source
 

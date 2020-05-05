@@ -1,6 +1,8 @@
 
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:/Users/progrium/Go/bin:$PATH"
 export ZSH="/Users/progrium/.oh-my-zsh"
+export EDITOR="/usr/local/bin/code"
+export GOPATH="/Users/progrium/Go"
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="avit"
@@ -21,7 +23,31 @@ export CDPATH=.:~:~/Source:~/Source/github.com:~/Source/github.com/progrium
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+autoload -U add-zsh-hook
+load-devrc() {
+  if [[ -f .devrc && -r .devrc ]]; then
+    source .devrc
+  else
+    if typeset -f devrc-unset > /dev/null; then
+      devrc-unset
+      unset -f devrc-unset
+    fi
+  fi
+}
+add-zsh-hook chpwd load-devrc
+
+edit() {
+  if [[ "$1" ]]; then
+    $EDITOR $1
+  else
+    $EDITOR .
+  fi
+}
+
 reload() {
+  cd ~/Environ
+  git pull --rebase origin master
+  cd - > /dev/null
   source ~/.zshrc
 }
 
@@ -30,12 +56,16 @@ preexec() {
 }
 
 defaultcmd=ls
+__firstcmd=
 precmd() {
   if [[ "$cmd" ]]; then
     lastcmd=$cmd;
     cmd=;
+    if [[ ! "$__firstcmd" ]]; then
+      __firstcmd=true;
+    fi
   else
-    $defaultcmd
+    [[ $__firstcmd ]] && $defaultcmd
   fi
 }
 
