@@ -20,8 +20,11 @@ source ~/Environ/state
 
 export CDPATH=.:~:~/Source:~/Source/github.com:~/Source/github.com/progrium
 
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias g="git status"
+alias gpr="gup origin"
+alias ls="ls -lah"
+alias gcm="gc -m"
+alias gpu="gp origin"
 
 autoload -U add-zsh-hook
 load-devrc() {
