@@ -1,0 +1,43 @@
+
+state-defaults() {
+    defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -int 1
+    defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+    defaults write com.apple.LaunchServices LSQuarantine -bool false
+    defaults write com.apple.Terminal "Default Window Settings" -string "Pro"
+    defaults write com.apple.Terminal "Startup Window Settings" -string "Pro"
+    defaults write -globalDomain com.apple.trackpad.scaling -int 1
+    defaults write -globalDomain com.apple.trackpad.forceClick -int 0
+    defaults write com.apple.AppleMultitouchTrackpad ActuateDetents -int 0
+    defaults write com.apple.AppleMultitouchTrackpad ForceSuppressed -int 1
+    defaults write com.apple.TextInputMenu visible -bool false
+}
+
+state-dock() {
+    dockutil --remove Launchpad
+    dockutil --remove Safari
+    dockutil --remove Mail
+    dockutil --remove FaceTime
+    dockutil --remove Messages
+    dockutil --remove Maps
+    dockutil --remove Photos
+    dockutil --remove Contacts
+    dockutil --remove Calendar
+    dockutil --remove Reminders
+    dockutil --remove Notes
+    dockutil --remove Music
+    dockutil --remove Podcasts
+    dockutil --remove TV
+    dockutil --remove News
+    dockutil --remove "App Store"
+}
+
+[[ -d ~/Source ]] || \
+    mkdir ~/Source
+
+[[ -f ~/.gitconfig ]] || \
+    cp ~/Environ/gitconfig ~/.gitconfig
+
+[[ -f ~/.ssh/id_rsa ]] || \
+    ssh-keygen -t rsa -b 4096 -N '' -f ~/.ssh/id_rsa -C "progrium@gmail.com"
+
+echo "source ~/Environ/zshrc" > ~/.zshrc
