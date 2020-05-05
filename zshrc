@@ -25,6 +25,7 @@ alias gpr="gup origin"
 alias ls="ls -lah"
 alias gcm="gc -m"
 alias gpu="gp origin"
+alias b="hub browse"
 
 ssh-origin() {
   git remote set-url origin "$(git remote get-url origin | sed 's/https:\/\//git@/' | sed 's/\//:/')"
@@ -51,9 +52,11 @@ edit() {
   fi
 }
 
+
+
 reload() {
   cd ~/Environ
-  git pull --rebase origin master
+  git pull --rebase origin master > /dev/null 2>&1
   cd - > /dev/null
   source ~/.zshrc
 }

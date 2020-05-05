@@ -31,6 +31,38 @@ state-dock() {
     dockutil --remove "App Store"
 }
 
+
+brew-check() {
+    brew info $1 | grep 'Not installed' > /dev/null
+}
+
+state-brew() {
+    while IFS= read -r line; do
+        which $line > /dev/null || \
+            (brew-check $line && \
+                brew install $line)
+    done < ~/Environ/brew
+}
+state-brew
+
+cask-check() {
+    brew cask info $1 | grep 'Not installed' > /dev/null
+}
+
+cask-quickcheck() {
+    ls /Applications | grep -i "${1//-/ }" > /dev/null
+}
+
+state-cask() {
+    while IFS= read -r line; do
+        cask-quickcheck $line || \
+            (cask-check $line && \
+                brew cask install $line)
+    done < ~/Environ/cask
+}
+state-cask
+
+
 [[ -d ~/Go ]] || \
     mkdir ~/Go
 
