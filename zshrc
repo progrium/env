@@ -16,11 +16,33 @@ plugins=(git golang docker)
 source $ZSH/oh-my-zsh.sh
 source ~/Environ/state
 
+export CDPATH=.:~:~/Source:~/Source/github.com:~/Source/github.com/progrium
+
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 reload() {
   source ~/.zshrc
+}
+
+preexec() {
+  cmd=$1;
+}
+
+defaultcmd=ls
+precmd() {
+  if [[ "$cmd" ]]; then
+    lastcmd=$cmd;
+    cmd=;
+  else
+    $defaultcmd
+  fi
+}
+
+clone() {
+  mkdir -p ~/Source/$1
+  git clone http://$1 ~/Source/$1
+  cd ~/Source/$1
 }
 
 erase-install() {
