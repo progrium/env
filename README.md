@@ -1,6 +1,6 @@
 # env
 
 ```
-curl -sL http://tiny.cc/progrium-bootstrap | sh
+curl -sL http://tiny.cc/progrium-bootstrap | zsh
 ```
 
