@@ -1,24 +1,17 @@
 
 export PATH="/usr/local/opt/ruby/bin:/Users/progrium/Go/bin:$PATH"
-export ZSH="/Users/progrium/.oh-my-zsh"
 export EDITOR="/usr/local/bin/code"
 export GOPATH="/Users/progrium/Go"
-
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="avit"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-
-plugins=(git golang docker)
-
-source $ZSH/oh-my-zsh.sh
-source ~/Environ/state
-
 export CDPATH=.:~:~/Source:~/Source/github.com:~/Source/github.com/progrium
+
+export ZSH="/Users/progrium/.oh-my-zsh"
+ZSH_THEME="avit"
+# ENABLE_CORRECTION="true"
+COMPLETION_WAITING_DOTS="true"
+plugins=(git golang docker)
+source $ZSH/oh-my-zsh.sh
+
+source ~/Environ/state
 
 alias g="git status"
 alias gpr="gup origin"
