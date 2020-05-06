@@ -1,0 +1,39 @@
+
+reload() {
+  cd ~/Environ
+  git pull --rebase origin master > /dev/null 2>&1
+  cd - > /dev/null
+  source ~/.zshrc
+}
+
+edit() {
+  if [[ "$1" ]]; then
+    $EDITOR $1
+  else
+    $EDITOR .
+  fi
+}
+
+ssh-origin() {
+  git remote set-url origin "$(git remote get-url origin | sed 's/https:\/\//git@/' | sed 's/\//:/')"
+}
+
+clone() {
+  mkdir -p ~/Source/$1
+  git clone http://$1 ~/Source/$1
+  cd ~/Source/$1
+}
+
+erase-install() {
+  /Applications/Install\ macOS*.app/Contents/Resources/startosinstall \
+    --eraseinstall --agreetolicense --nointeraction --forcequitapps
+}
+
+recovery-reboot() {
+  sudo nvram "recovery-boot-mode=unused"
+  sudo reboot
+}
+
+recovery-unset() {
+  sudo nvram -d recovery-boot-mode
+}

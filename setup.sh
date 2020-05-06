@@ -10,7 +10,7 @@ chmod g-w,o-w /usr/local/share/zsh
 chmod g-w,o-w /usr/local/share/zsh/site-functions
 
 git clone https://github.com/progrium/env.git ~/Environ
-source ~/Environ/state
+source ~/Environ/include/state
 
 state-defaults
 state-dock

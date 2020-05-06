@@ -1,0 +1,6 @@
+alias g="git status"
+alias gpr="gup origin"
+alias ls="ls -lah"
+alias gcm="gc -m"
+alias gpu="gp origin"
+alias b="hub browse"

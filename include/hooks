@@ -1,0 +1,30 @@
+autoload -U add-zsh-hook
+load-devrc() {
+  if [[ -f .devrc && -r .devrc ]]; then
+    source .devrc
+  else
+    if typeset -f devrc-unset > /dev/null; then
+      devrc-unset
+      unset -f devrc-unset
+    fi
+  fi
+}
+add-zsh-hook chpwd load-devrc
+
+preexec() {
+  cmd=$1;
+}
+
+defaultcmd=ls
+__firstcmd=
+precmd() {
+  if [[ "$cmd" ]]; then
+    lastcmd=$cmd;
+    cmd=;
+    if [[ ! "$__firstcmd" ]]; then
+      __firstcmd=true;
+    fi
+  else
+    [[ $__firstcmd ]] && $defaultcmd
+  fi
+}

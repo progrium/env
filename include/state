@@ -13,22 +13,9 @@ state-defaults() {
 }
 
 state-dock() {
-    dockutil --remove Launchpad
-    dockutil --remove Safari
-    dockutil --remove Mail
-    dockutil --remove FaceTime
-    dockutil --remove Messages
-    dockutil --remove Maps
-    dockutil --remove Photos
-    dockutil --remove Contacts
-    dockutil --remove Calendar
-    dockutil --remove Reminders
-    dockutil --remove Notes
-    dockutil --remove Music
-    dockutil --remove Podcasts
-    dockutil --remove TV
-    dockutil --remove News
-    dockutil --remove "App Store"
+    dockutil --remove all
+    dockutil --add "~/Desktop"
+    dockutil --add "~/Downloads"
 }
 
 
@@ -41,7 +28,7 @@ state-brew() {
         which $line > /dev/null || \
             (brew-check $line && \
                 brew install $line)
-    done < ~/Environ/brew
+    done < ~/Environ/state/brew
 }
 state-brew
 
@@ -58,7 +45,7 @@ state-cask() {
         cask-quickcheck $line || \
             (cask-check $line && \
                 brew cask install $line)
-    done < ~/Environ/cask
+    done < ~/Environ/state/cask
 }
 state-cask
 
