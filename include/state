@@ -1,3 +1,4 @@
+echo "source ~/Environ/zshrc" > ~/.zshrc
 
 state-defaults() {
     defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -int 1
@@ -62,4 +63,3 @@ state-cask
 [[ -f ~/.ssh/id_rsa ]] || \
     ssh-keygen -t rsa -b 4096 -N '' -f ~/.ssh/id_rsa -C "progrium@gmail.com"
 
-echo "source ~/Environ/zshrc" > ~/.zshrc
