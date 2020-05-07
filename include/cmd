@@ -20,7 +20,7 @@ ssh-origin() {
 
 clone() {
   mkdir -p ~/Source/$1
-  git clone http://$1 ~/Source/$1
+  git clone https://$1 ~/Source/$1
   cd ~/Source/$1
 }
 
