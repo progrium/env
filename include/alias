@@ -1,6 +1,10 @@
 alias g="git status"
-alias gpr="gup origin"
+alias b="hub browse"
+alias r="reload"
+alias e="edit"
+
 alias ls="ls -lah"
+
+alias gpr="gup origin"
 alias gcm="gc -m"
 alias gpu="gp origin"
-alias b="hub browse"
