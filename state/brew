@@ -12,3 +12,5 @@ wget
 youtube-dl
 make
 python
+yarn
+typescript
