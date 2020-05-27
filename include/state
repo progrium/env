@@ -11,6 +11,8 @@ state-defaults() {
     defaults write com.apple.AppleMultitouchTrackpad ActuateDetents -int 0
     defaults write com.apple.AppleMultitouchTrackpad ForceSuppressed -int 1
     defaults write com.apple.TextInputMenu visible -bool false
+
+    defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
 }
 
 state-dock() {
